@@ -23,7 +23,7 @@
   </tr>
   <tr>
     <td colspan="3"> <tr>
-    <th colspan="3" align="center" valign="middle" scope="col"><span class="STYLE6">&copy;板权所有：兴义民族师范学院08级计算机科学系现代教育（1）班 </span></th>
+    <th colspan="3" align="center" valign="middle" scope="col"><span class="STYLE6">&copy;板权所有：---------------------- </span></th>
   </tr><tr><td colspan="3"></td>
   <tr><td colspan="3"></tr>
 </table>

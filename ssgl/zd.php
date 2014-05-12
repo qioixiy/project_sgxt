@@ -112,7 +112,7 @@ html { overflow-x: auto; overflow-y: auto; border:0;}
 </table>
 <table width="1000" height="20" bgcolor="#CCCCCC" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
   <tr>
-    <td width="90"><div align="center"><span class="STYLE8">首页</span></div></td>
+    <td width="90"><div align="center"><span class="STYLE8"><a href="index.php">首页</a></span></div></td>
     <td width="90"><div align="center"><span class="STYLE8">寝室查询</span></div></td>
     <td width="90"><div align="center"><span class="STYLE8">班级查询</span></div></td>
     <td width="90"><div align="center" class="STYLE8">文明寝室</div></td>
@@ -127,7 +127,7 @@ html { overflow-x: auto; overflow-y: auto; border:0;}
 </table>
 <table width="1000" height="500" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="1000" align="right" valign="top" bgcolor="#0066FF"><table cellspacing="0" cellpadding="0" width="100%" border="0">
+    <td width="1000" align="right" valign="top" bgcolor="#FFFFFF"><table cellspacing="0" cellpadding="0" width="100%" border="0">
       <tbody>
         <tr>
           <td align="left" valign="top"><h1 align="left">寝室管理制度</h1></td>
@@ -203,15 +203,10 @@ html { overflow-x: auto; overflow-y: auto; border:0;}
                   3、谁损坏，谁赔偿，无法查清的由损坏者所在宿舍集体赔偿，并根据实际情况从严处理。 <br />
                   4、发现宿舍公物被损坏，应于当日向生活指导老师报告，由生活指导老师填写报修单，放入报修箱内。 <br />
                   5、凡有下列情形之一者，应从严赔偿，必要时给予相应纪律处分。 <br />
-                  ??
                   ①屡教屡犯，知错不改者。 <br />
-                  ??
                   ②故意损坏者。 <br />
-                  ??
                   ③有人证、物证，而拒不承认，态度恶劣者。 <br />
-                  ??
                   ④策划煽动者。 <br />
-                  ??
                   ⑤知情不报，包庇隐瞒者。 <br />
                   6、宿舍财产损坏赔偿价按学校赔偿规定处理。肇事学生应把赔偿钱款交宿舍生活指导老师，由生活指导老师上交总<br />
                   务处。 </div>
@@ -224,6 +219,4 @@ html { overflow-x: auto; overflow-y: auto; border:0;}
   </tr>
 </table>
 </table>
-<?
-	require("tp.php") 
-	?>
+<?require("tp.php")?>

@@ -1,0 +1,39 @@
+*      /* 设置所有元素内外边框为0 */
+{
+    margin:0px;
+}
+.caption
+{
+    margin-left:150px;
+}
+.logo
+{
+    float:left;
+    margin-right:15px;
+    margin-top:-15px;
+}
+body    /* 设置字体 */
+{
+    font-size:14px;
+}
+#loginfrom
+{
+    margin:200px 500px;
+    width:400px;
+}
+#login
+{
+    margin-top:25px;
+}
+#login p
+{
+    margin-top:20px;
+}
+#image
+{
+    float:left;
+}
+.txtbox
+{
+    width:180px;
+}

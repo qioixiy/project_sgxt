@@ -16,7 +16,8 @@ body {
 }
 .STYLE13 {color: #FF0000}
 -->
-</style><style type="text/css">
+</style>
+<style type="text/css">
 <!--
 body {
 	margin-left: 0px;
@@ -64,11 +65,12 @@ html { overflow-x: auto; overflow-y: auto; border:0;}
 <link href="css.css" rel="stylesheet" type="text/css">
 </head>
 
-<body><table width="1000" height="150" border="0" align="center" cellpadding="0" cellspacing="0">
+<body>
+  <table width="1000" height="150" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td align="left" valign="top"><img src="tp/top.jpg" width="1000" height="150" /></td>
   </tr>
-</table>
+  </table>
 <table width="1000" height="20" bgcolor="#CCCCCC" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
   <tr>
     <td width="90"><div align="center"><span class="STYLE8">首页</span></div></td>
@@ -83,47 +85,47 @@ html { overflow-x: auto; overflow-y: auto; border:0;}
     <td width="90"><div align="center" class="STYLE8">管理制度</div></td>
     <td width="90"><div align="center" class="STYLE8">注销系统</div></td>
   </tr>
-</table><table width="1000" height="400" border="0" align="center" cellpadding="0" cellspacing="0" class="border2">
+</table>
+<table width="1000" height="400" border="0" align="center" cellpadding="0" cellspacing="0" class="border2">
   <tr>
     <th scope="col" align="left" valign="top"><table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="font201">
-      <tr>
-        <th scope="col" width="142" height="35">&nbsp;</th>
-        <th scope="col" width="855"><a href="lyb_add.php">发表留言</a></th>
-      </tr>
+		<tr>
+          <th scope="col" width="142" height="35">&nbsp;</th>
+          <th scope="col" width="855"><a href="lyb_add.php">发表留言</a></th>
+		</tr>
 	  <?php
 		include("db_conn.php");
 		$sql="select * from users";
 		$result=mysql_query($sql);
 		while($row=mysql_fetch_array($result)){
 		?>
-      <tr>
-        <td height="20" align="right" class="bk">用户名：</td>
-        <td class="bk1">&nbsp;<?php echo $row["name"];?></td>
-      </tr>
-      <tr>
-        <td height="20" align="right" class="bk">留言标题：</td>
-        <td class="bk1">&nbsp;<?php echo $row["bt"];?></td>
-      </tr>
-      <tr>
-        <td height="20" align="right" class="bk">Email：</td>
-        <td class="bk1">&nbsp;<?php echo $row["email"];?></td>
-      </tr>
-      <tr>
-        <td align="right" valign="middle" class="bk2">留言内容：</td>
-        <td class="bk3">&nbsp;<?php echo $row["nr"];?></td>
-      </tr>
-	  <tr>
-	  <td height="15"></td>
-	  <td height="15"></td>
+		<tr>
+          <td height="20" align="right" class="bk">用户名：</td>
+          <td class="bk1">&nbsp;<?php echo $row["name"];?></td>
+		</tr>
+		<tr>
+          <td height="20" align="right" class="bk">留言标题：</td>
+          <td class="bk1">&nbsp;<?php echo $row["bt"];?></td>
+		</tr>
+		<tr>
+          <td height="20" align="right" class="bk">Email：</td>
+          <td class="bk1">&nbsp;<?php echo $row["email"];?></td>
+		</tr>
+		<tr>
+          <td align="right" valign="middle" class="bk2">留言内容：</td>
+          <td class="bk3">&nbsp;<?php echo $row["nr"];?></td>
+		</tr>
+		<tr>
+		  <td height="15"></td>
+		  <td height="15"></td>
 	  <?php
 	  }
 	  ?>
-    </table></th>
+    </table>
+	</th>
   </tr>
 </table>
-<?
-	require("tp.php") 
-	?>
+<?require("tp.php")?>
 </table>
 </body>
 </html>

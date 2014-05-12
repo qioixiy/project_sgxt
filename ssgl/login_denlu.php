@@ -24,8 +24,8 @@ if($_POST["action"]=="do")
 				exit();					
 			}
 			
-}					
-	
+}
+
 ?>
 	
 	

@@ -12,7 +12,7 @@
 
   <body>
 	<div id="container">
-	  <div id="header"><h1>This is the Header</h1></div>
+	  <div id="header"><h1 align="center">宿舍管理系统</h1></div>
 
 	  <div id="mainContent">
 		<div id="sidebar"><p>导航栏</p>

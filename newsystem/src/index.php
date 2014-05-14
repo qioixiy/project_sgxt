@@ -17,7 +17,8 @@
 	  <div id="mainContent">
 		<div id="sidebar"><p>导航栏</p>
 		  <ul>
-			<li><a href="" target="_blank">首页</a></li>
+			<!--<li><a href="" target="_blank">首页</a></li>-->
+			<li><a href="">首页</a></li>
 			<li><a href="" target="_blank">寝室查询</a></li>
 			<li><a href="" target="_blank">班级查询</a></li>
 			<li><a href="" target="_blank">文明寝室</a></li>

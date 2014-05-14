@@ -6,16 +6,23 @@
 
 	session_start();
 	include("db_conn.php");
-	$result=mysql_query("select count(*) from user where xh='$name' and pwd='$pwd'");
+	$result=mysql_query("select count(*) from users where name='$name' and password='$pwd'");
 	$row = mysql_fetch_array($result);
 			
-	if($row[0]==0) {
+	if ($row[0]==0) {
 		echo("<script language='javascript'>");
-		echo("alert('用户名或密码错误！');");
+		//find users name
+		if (mysql_fetch_array(mysql_query("select count(*) from users where name='$name'"))[0]==0) {
+			echo("alert('Invalid user');");
+		} else {
+			echo("alert('wrong password');");
+		}
+		
 		echo("window.location.href='../index.php';</script>");	
 		exit();
 	} else {
-		$_SESSION["xh"]=$xh;
+		$_SESSION['name']=$name;
+				
 		echo "<script language='javascript'>"; 
 		echo " location='index.php';";
 		echo "</script>"; 	

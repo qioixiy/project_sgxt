@@ -7,7 +7,7 @@ body{ color:#333; font:12px/1.5 simsun; }
 .header, .footer{ height:40px; overflow:hidden; background-color:#09C; }
 .header{ margin-top:-40px; }
 .maincontent{ padding-left:180px; height:100%; overflow:hidden; background-color:#CCC; }
-.sidebar, .content{ display:inline; float:left; height:100%; overflow:hidden; overflow-y:scroll; }
+.sidebar{ display:inline; float:left; height:100%; overflow:hidden; overflow-y:scroll; }
 .sidebar{ margin-left:-180px; width:180px; }
 .rightbox{ width:100%; }
 

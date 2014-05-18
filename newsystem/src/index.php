@@ -11,7 +11,7 @@
   </head>
   
   <body>
-    <div class="header"><h2 align="center">宿舍管理系统</h1></div>
+    <div class="header"><h1 align="center">宿舍管理系统</h1></div>
     <div class="maincontent">
       <div class="sidebar"><p>导航栏</p>
 	<ul>
@@ -27,7 +27,7 @@
 	</ul>
       </div>
       <div class="content">
-	<p>test</p>
+	<?php include "table.php" ?>
       </div>
     </div>
     <div class="footer">This is the footer<span style="display:none"></span></div>

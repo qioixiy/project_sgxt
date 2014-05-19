@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <title>宿舍管理系统</title>
-    <link href="layout.css" rel="stylesheet" type="text/css" />
+    <link href="/sgxt/newsystem/assert/css/layout.css" rel="stylesheet" type="text/css" />
     <meta name="Keywords" content="宿舍管理系统" />
     <meta name="" content="DIV+CSS" />
     <meta name="author" content="qioixiy" />

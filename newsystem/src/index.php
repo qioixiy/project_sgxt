@@ -1,3 +1,3 @@
-<?php include "header.php" ?>
-<?php include "table.php" ?>
-<?php include "footer.php" ?>
+<?php include "./common/header.php" ?>
+<?php include "./table.php" ?>
+<?php include "./common/footer.php" ?>

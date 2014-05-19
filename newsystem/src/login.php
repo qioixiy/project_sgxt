@@ -4,7 +4,7 @@ $name=$_POST["name"];
 $pwd=$_POST["password"];
 
 session_start();
-include("db_conn.php");
+include("./common/db_conn.php");
 $result=mysql_query("select count(*) from users where name='$name' and password='$pwd'");
 $row = mysql_fetch_array($result);
 			

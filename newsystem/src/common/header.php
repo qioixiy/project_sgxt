@@ -9,23 +9,31 @@
     <meta name="author" content="qioixiy" />
     <meta name="Description" content="" />
   </head>
-  
+
   <body>
-    <div class="header"><h1 align="center">宿舍管理系统</h1></div>
+    <div class="header">
+      <h1 align="center">宿舍管理系统</h1>
+    </div>
     <div class="maincontent">
-      <div class="sidebar"><h4>导航栏</h4>
+      <div class="sidebar">
+	<h4 style="background-color: gray;">&nbsp;<strong>导航栏</strong>&nbsp;</h4>
+<?php
+     if (isset($_COOKIE["user"]))
+         echo "<p align=\"right\" style=\"color: red;\"> Welcome " . $_COOKIE["user"] . "</p>";
+     else
+         echo "<p align=\"right\" style=\"color: red;\"> Welcome guest!</br>";
+?>
       </br>
       <div id="navi">
 	<ul>
-	  <!--<li><a href="" target="_blank">首页</a></li>-->
-	  <li><a href="">首页</a></li>
-	  <li><a href="">寝室查询</a></li>
-	  <li><a href="">班级查询</a></li>
-	  <li><a href="">文明寝室</a></li>
-	  <li><a href="">损坏登记</a></li>
-	  <li><a href="">评分信息</a></li>
-	  <li><a href="">个人资料</a></li>
-	  <li><a href="">注销系统</a></li>
+	  <li><a href="../">&nbsp;首页&nbsp;</a></li>
+	  <li><a href="">&nbsp;寝室查询&nbsp;</a></li>
+	  <li><a href="">&nbsp;班级查询&nbsp;</a></li>
+	  <li><a href="">&nbsp;文明寝室&nbsp;</a></li>
+	  <li><a href="">&nbsp;损坏登记&nbsp;</a></li>
+	  <li><a href="">&nbsp;评分信息&nbsp;</a></li>
+	  <li><a href="">&nbsp;个人资料&nbsp;</a></li>
+	  <li><a href="">&nbsp;注销系统&nbsp;</a></li>
 	</ul>
       </div>
     </div>

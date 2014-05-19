@@ -14,18 +14,21 @@
     <div class="header"><h1 align="center">宿舍管理系统</h1></div>
     <div class="maincontent">
       <div class="sidebar"><h4>导航栏</h4>
-	<div id="navi">
-	  <ul>
-	    <!--<li><a href="" target="_blank">首页</a></li>-->
-	    <li><a href="">首页</a></li>
-	    <li><a href="">寝室查询</a></li>
-	    <li><a href="">班级查询</a></li>
-	    <li><a href="">文明寝室</a></li>
-	    <li><a href="">损坏登记</a></li>
-	    <li><a href="">评分信息</a></li>
-	    <li><a href="">个人资料</a></li>
-	    <li><a href="">注销系统</a></li>
-	  </ul>
-	</div>
+      </br>
+      <div id="navi">
+	<ul>
+	  <!--<li><a href="" target="_blank">首页</a></li>-->
+	  <li><a href="">首页</a></li>
+	  <li><a href="">寝室查询</a></li>
+	  <li><a href="">班级查询</a></li>
+	  <li><a href="">文明寝室</a></li>
+	  <li><a href="">损坏登记</a></li>
+	  <li><a href="">评分信息</a></li>
+	  <li><a href="">个人资料</a></li>
+	  <li><a href="">注销系统</a></li>
+	</ul>
       </div>
-      <div class="content">
+    </div>
+    <div class="content">
+      
+      

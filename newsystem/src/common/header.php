@@ -26,8 +26,8 @@
       </br>
       <div id="navi">
 	<ul>
-	  <li><a href="../">&nbsp;首页&nbsp;</a></li>
-	  <li><a href="">&nbsp;寝室查询&nbsp;</a></li>
+	  <li><a href="/sgxt/newsystem/">&nbsp;首页&nbsp;</a></li>
+	  <li><a href="/sgxt/newsystem/src/Dormitory_manager">&nbsp;寝室查询&nbsp;</a></li>
 	  <li><a href="">&nbsp;班级查询&nbsp;</a></li>
 	  <li><a href="">&nbsp;文明寝室&nbsp;</a></li>
 	  <li><a href="">&nbsp;损坏登记&nbsp;</a></li>

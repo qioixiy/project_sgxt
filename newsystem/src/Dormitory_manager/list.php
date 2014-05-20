@@ -2,7 +2,6 @@
 
 include_once("../common/db_conn.php");
 
-$result = mysql_query("SELECT * FROM students");
 ?>   
 <html>
   <head>
@@ -13,11 +12,13 @@ $result = mysql_query("SELECT * FROM students");
     <table id="customers">
       <tr>
 	<th>ID</th>
-	<th>名字</th>
-	<th>联系方式</th>
-	<th>创建时间</th>
+	<th>宿舍号</th>
+	<th>宿舍类型</th>
+	<th>属于宿舍楼</th>
       </tr>
 <?php
+	$result = mysql_query("SELECT * FROM dorm");
+
     $index = 0;
     while($row = mysql_fetch_array($result)) {
         if ($index == 0) {
@@ -27,7 +28,10 @@ $result = mysql_query("SELECT * FROM students");
             echo "<tr class='alt'>"; 
             $index = 0;
         }
-        echo "<td>" . $row['id'] . "</td>" . "<td>" . $row['name'] . "</td>" . "<td>" . $row['tel'] . "</td>" . "<td>" . $row['created'] . "</td>";
+        echo "<td>" . $row['id'] . "</td>" 
+			. "<td>" . $row['编号'] . "</td>" 
+			. "<td>" . $row['type'] . "</td>" 
+			. "<td>" . $row['宿舍楼'] . "</td>";
         echo "</tr>";
     }
 ?>      

@@ -15,9 +15,10 @@ include_once("../common/db_conn.php");
 	<th>宿舍号</th>
 	<th>宿舍类型</th>
 	<th>属于宿舍楼</th>
+	<th>入住人数</th>
       </tr>
 <?php
-	$result = mysql_query("SELECT * FROM dorm");
+	$result = mysql_query("SELECT * FROM dorms");
 
     $index = 0;
     while($row = mysql_fetch_array($result)) {
@@ -31,7 +32,8 @@ include_once("../common/db_conn.php");
         echo "<td>" . $row['id'] . "</td>" 
 			. "<td>" . $row['编号'] . "</td>" 
 			. "<td>" . $row['type'] . "</td>" 
-			. "<td>" . $row['宿舍楼'] . "</td>";
+			. "<td>" . $row['宿舍楼'] . "</td>"
+			. "<td>" . $row['入住人数'] . "</td>";
         echo "</tr>";
     }
 ?>      

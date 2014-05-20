@@ -1,8 +1,8 @@
 <?php 
-include("./common/header.php");
-include("../common/db_conn.php");
+include_once("./common/header.php");
+include_once("../common/db_conn.php");
 
+include_once("./list.php");
 
-
-include("./common/footer.php");
+include_once("./common/footer.php");
 ?>

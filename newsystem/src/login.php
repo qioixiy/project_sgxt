@@ -10,7 +10,7 @@ setcookie("user", $name, time()+600);
 //print_r($_COOKIE);
 
 session_start();
-include("./common/db_conn.php");
+include_once("./common/db_conn.php");
 $result=mysql_query("select count(*) from users where name='$name' and password='$pwd'");
 $row = mysql_fetch_array($result);
 			

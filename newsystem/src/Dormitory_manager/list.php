@@ -1,7 +1,7 @@
 <?php 
 
-include("../common/header.php");
-include("../common/db_conn.php");
+include_once("../common/header.php");
+include_once("../common/db_conn.php");
 
 $result = mysql_query("SELECT * FROM students");
 ?>   
@@ -38,5 +38,5 @@ $result = mysql_query("SELECT * FROM students");
 </html>
 
 <?php
-include("../common/footer.php");
+include_once("../common/footer.php");
 ?>

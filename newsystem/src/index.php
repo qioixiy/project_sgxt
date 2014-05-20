@@ -1,3 +1,5 @@
-<?php include "./common/header.php" ?>
-<?php include "./common/license.php" ?>
-<?php include "./common/footer.php" ?>
+<?php 
+include_once "./common/header.php"
+include_once "./common/license.php"
+include_once "./common/footer.php" 
+?>

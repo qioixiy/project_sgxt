@@ -3,8 +3,28 @@ include_once("./common/header.php");
 include_once("../common/db_conn.php");
 ?>
 
+<?php
+if (isset($_POST["宿舍号"])) {
+	date_default_timezone_set("Asia/Shanghai");
 
-<form action="" method="post" enctype="multipart/form-data" name="myform" >
+	$sushehao = $_POST["宿舍号"];
+	$susheleibie = $_POST["宿舍类型"];
+	$sushelou = $_POST["宿舍楼"];
+	$ruzhurenshu = $_POST["入住人数"];
+	$dengjishijian = date('Y-m-d H:i:s');
+	$zuihougengxinshijian = date('Y-m-d H:i:s');
+	$beizhu = $_POST["备注"];
+
+	$sql = "INSERT INTO `manager_db`.`dorms` (`id`, `宿舍号`, `宿舍类型`, `宿舍楼`, `入住人数`, `登记时间`,`最后更新时间`, `备注`)
+ VALUES ('', '$sushehao', '$susheleixing', '$sushelou', '$ruzhurenshu', '$dengjishijian', '$zuihougengxinshijian', '$beizhu');";
+    if (mysql_query($sql)) {
+        echo "<p style=\"color:green\">新增宿舍成功.</p>";
+    } else {
+        echo "<p style=\"color:red\">Error database: " . mysql_error() . "</p></br>";
+    }	
+}
+?>
+<form action="add.php" method="post" enctype="multipart/form-data" name="myform" >
   <tr>
     <td>
       <table id="subtree1" style="DISPLAY: " width="100%" border="0" cellspacing="1" cellpadding="1">
@@ -18,26 +38,26 @@ include_once("../common/db_conn.php");
 		      <td height="32" colspan="3" align="center" class="select_tr STYLE2" style="font-size:16px" bgcolor="#AAAAAA">新增宿舍</td>
 		    </tr>
 		    <tr bgcolor="#EEEEEE">
-		      <td align="center" height="25">宿舍楼</td>
-		      <td colspan="2"><input type="text" name="xm"  id="xm"/></td>
-		    </tr>
-		    <tr bgcolor="#EEEEEE">
 		      <td align="center" height="25">宿舍号</td>
-		      <td colspan="2"><input type="text" name="jd" id="jd" /></td>
+		      <td colspan="2"><input type="text" name="宿舍号" id="sushehao" /></td>
 		    </tr>
 		    <tr bgcolor="#EEEEEE">
 		      <td align="center" height="25">宿舍类别</td>
-		      <td colspan="2"><input type="text" name="lb" id="lb" /></td>
+		      <td colspan="2"><input type="text" name="宿舍类别" id="susheleibie" /></td>
 		    </tr>
 		    <tr bgcolor="#EEEEEE">
-		      <td align="center" height="25">几人间</td>
-		      <td colspan="2"><input type="text" name="jrj" id="jrj" /></td>
+		      <td align="center" height="25">宿舍楼</td>
+		      <td colspan="2"><input type="text" name="宿舍楼"  id="sushelou"/></td>
+		    </tr>
+		    <tr bgcolor="#EEEEEE">
+		      <td align="center" height="25">入住人数</td>
+		      <td colspan="2"><input type="text" name="入住人数" id="ruzhurenshu"/></td>
 		    </tr>
 		    <tr bgcolor="#EEEEEE">
 		      <td width="9%" height="20"><div align="center">备注</div></td>
 		      <td colspan="2" rowspan="2" >
 			<label>
-			  <textarea name="yy" id="yy" cols="70" rows="10"></textarea>
+			  <textarea name="备注" id="beizhu" cols="70" rows="10"></textarea>
 			</label>
 		      </td>
 		    </tr>
@@ -45,16 +65,6 @@ include_once("../common/db_conn.php");
 		      <td><div align="center"></div></td>
 		    </tr>
 		    
-		    <tr bgcolor="#EEEEEE">
-		      <td height="25">
-			<div align="center">登记时间</div>
-		      </td>
-		      <td colspan="2" >
-			<label>
-			  <input type="text" name="c" id="c"/>
-			</label>
-		      </td>
-		    </tr>
 		    <tr bgcolor="#EEEEEE">
 		      <td height="25" colspan="3">
 			<div align="center">

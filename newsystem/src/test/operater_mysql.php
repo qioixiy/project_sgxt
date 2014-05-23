@@ -25,7 +25,7 @@ $total;
 
 $foolers = array("银杏楼" , "杏花楼", "厚德楼", "达理楼");
 $types = array(4,6,8);
-for ($id=1; $id<=50; $id++)
+for ($id=1; $id<=500; $id++)
 {   
     $num = $num+1;
     $type = rand(0,2);

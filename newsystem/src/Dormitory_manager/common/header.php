@@ -28,10 +28,10 @@
 	<ul>
 	  <li><a href="/sgxt/newsystem/">&nbsp;首页&nbsp;</a></li>
 	  <li><a href="/sgxt/newsystem/src/Dormitory_manager/">&nbsp;宿舍管理&nbsp;</a></li>
-	  <li><a href="">&nbsp;新增宿舍&nbsp;</a></li>
-	  <li><a href="">&nbsp;查看宿舍信息&nbsp;</a></li>
-	  <li><a href="">&nbsp;修改宿舍信息&nbsp;</a></li>
-	  <li><a href="">&nbsp;删除宿舍&nbsp;</a></li>
+	  <li><a href="./add.php">&nbsp;新增宿舍&nbsp;</a></li>
+	  <li><a href="./view.php">&nbsp;查看宿舍信息&nbsp;</a></li>
+	  <li><a href="./modify.php">&nbsp;修改宿舍信息&nbsp;</a></li>
+	  <li><a href="./delete.php">&nbsp;删除宿舍&nbsp;</a></li>
 	</ul>
       </div>
     </div>

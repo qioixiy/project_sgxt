@@ -26,12 +26,12 @@
       </br>
       <div id="navi">
 	<ul>
-	  <li><a href="/sgxt/newsystem/">&nbsp;首页&nbsp;</a></li>
-	  <li><a href="/sgxt/newsystem/src/Dormitory_manager/">&nbsp;宿舍管理&nbsp;</a></li>
-	  <li><a href="">&nbsp;班级管理&nbsp;</a></li>
-	  <li><a href="">&nbsp;后勤管理&nbsp;</a></li>
-	  <li><a href="">&nbsp;个人资料&nbsp;</a></li>
-	  <li><a href="">&nbsp;注销系统&nbsp;</a></li>
+	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="/sgxt/newsystem/">&nbsp;首页&nbsp;</a></li>
+	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="/sgxt/newsystem/src/Dormitory_manager/">&nbsp;宿舍管理&nbsp;</a></li>
+	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="">&nbsp;班级管理&nbsp;</a></li>
+	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="">&nbsp;后勤管理&nbsp;</a></li>
+	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="">&nbsp;个人资料&nbsp;</a></li>
+	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="">&nbsp;注销系统&nbsp;</a></li>
 	</ul>
       </div>
     </div>

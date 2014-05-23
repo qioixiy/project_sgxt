@@ -4,25 +4,38 @@ include_once("../common/db_conn.php");
 ?>
 
 <?php
-if (isset($_POST["宿舍号"])) {
-	date_default_timezone_set("Asia/Shanghai");
+function db_insert() {
+	if (isset($_POST["宿舍号"])) {
+		date_default_timezone_set("Asia/Shanghai");
 
-	$sushehao = $_POST["宿舍号"];
-	$susheleibie = $_POST["宿舍类型"];
-	$sushelou = $_POST["宿舍楼"];
-	$ruzhurenshu = $_POST["入住人数"];
-	$dengjishijian = date('Y-m-d H:i:s');
-	$zuihougengxinshijian = date('Y-m-d H:i:s');
-	$beizhu = $_POST["备注"];
-
-	$sql = "INSERT INTO `manager_db`.`dorms` (`id`, `宿舍号`, `宿舍类型`, `宿舍楼`, `入住人数`, `登记时间`,`最后更新时间`, `备注`)
+		$sushehao = $_POST["宿舍号"];
+		$susheleixing = $_POST["宿舍类型"];
+		$sushelou = $_POST["宿舍楼"];
+		$ruzhurenshu = $_POST["入住人数"];
+		$dengjishijian = date('Y-m-d H:i:s');
+		$zuihougengxinshijian = date('Y-m-d H:i:s');
+		$beizhu = $_POST["备注"];
+		//echo $sushehao . $susheleixing . $sushelou . $ruzhurenshu . $beizhu;
+		if (empty($sushehao)
+			|| empty($susheleixing)
+			|| empty($sushelou)
+			|| empty($ruzhurenshu)) {
+			echo "<p style=\"color:red\">数据不完整！请重新输入。" . "</p>";
+			return;
+		}
+		$sql = "INSERT INTO `manager_db`.`dorms` (`id`, `宿舍号`, `宿舍类型`, `宿舍楼`, `入住人数`, `登记时间`,`最后更新时间`, `备注`)
  VALUES ('', '$sushehao', '$susheleixing', '$sushelou', '$ruzhurenshu', '$dengjishijian', '$zuihougengxinshijian', '$beizhu');";
-    if (mysql_query($sql)) {
-        echo "<p style=\"color:green\">新增宿舍成功.</p>";
-    } else {
-        echo "<p style=\"color:red\">Error database: " . mysql_error() . "</p></br>";
-    }	
+		if (mysql_query($sql)) {
+			echo "<p style=\"color:green\">新增宿舍成功.</p>";
+		} else {
+			echo "<p style=\"color:red\">Error database: " . mysql_error() . "</p>";
+		}	
+	} else {
+		echo "</br>";
+	}
 }
+
+db_insert();
 ?>
 <form action="add.php" method="post" enctype="multipart/form-data" name="myform" >
   <tr>
@@ -42,8 +55,8 @@ if (isset($_POST["宿舍号"])) {
 		      <td colspan="2"><input type="text" name="宿舍号" id="sushehao" /></td>
 		    </tr>
 		    <tr bgcolor="#EEEEEE">
-		      <td align="center" height="25">宿舍类别</td>
-		      <td colspan="2"><input type="text" name="宿舍类别" id="susheleibie" /></td>
+		      <td align="center" height="25">宿舍类型</td>
+		      <td colspan="2"><input type="text" name="宿舍类型" id="susheleixing" /></td>
 		    </tr>
 		    <tr bgcolor="#EEEEEE">
 		      <td align="center" height="25">宿舍楼</td>

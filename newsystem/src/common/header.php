@@ -26,7 +26,7 @@
       </br>
       <div id="navi">
 	<ul>
-	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="/sgxt/newsystem/">&nbsp;首页&nbsp;</a></li>
+	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="/sgxt/newsystem/">&nbsp;登录首页&nbsp;</a></li>
 	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="/sgxt/newsystem/src/Dormitory_manager/">&nbsp;宿舍管理&nbsp;</a></li>
 	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="">&nbsp;班级管理&nbsp;</a></li>
 	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="">&nbsp;后勤管理&nbsp;</a></li>

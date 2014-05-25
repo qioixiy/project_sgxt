@@ -99,7 +99,7 @@ function onload()
   </head>
   
   <body onload="onload()">
-	<div class="list" style="height:80%;width:100%;overflow:auto;display:block;">
+	<div style="border-style: solid; border-width: 1px 0px 1px 0px;">
 	  <table >
 		<tr>
 		  <td>Àﬁ…·¿‡–Õ:</th>
@@ -114,9 +114,10 @@ function onload()
 		  <td><select id="ruzhurenshu" name="keywords" size="1" onchange="select_changed(this)"></select></td>
 		</tr>
 	  </table>	   
+	</div>
 
+	<div class="list" style="height:80%;width:100%;overflow:auto;display:block;">
       <table id="customers">
-		
 		<tr>
 		  <th>ID</th>
 		  <th>Àﬁ…·∫≈</th>

@@ -78,8 +78,8 @@ function watch_set(f){ // 保存
 
 function stateChanged() {
 	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
-		alert(xmlHttp.responseText)
-		//document.getElementById("txtHint").innerHTML=xmlHttp.responseText 
+		//alert(xmlHttp.responseText)
+		document.getElementById("customers").innerHTML=xmlHttp.responseText 
 	}
 }
 
@@ -131,17 +131,23 @@ function onload()
   
   <body onload="onload()">
 	<div class="list" style="height:80%;width:100%;overflow:auto;display:block;">
-      <table id="customers">
-		<tr style="border-style: solid; border-width: 0px 0px 5px 0px;">
-		  <th style="background-color:#FFFFFF;"></th>
-		  <th style="background-color:#FFFFFF;"></th>
-		  <th style="background-color:#FFFFFF;"><select id="susheleixing" name="keywords" size="1" onchange="select_changed(this)"></select></th>
-		  <th style="background-color:#FFFFFF;"><select id="sushelou" name="keywords" size="1" onchange="select_changed(this)"></select></th>
-		  <th style="background-color:#FFFFFF;"><select id="ruzhurenshu" name="keywords" size="1" onchange="select_changed(this)"></select></th>
-		  <th style="background-color:#FFFFFF;"></th>
-		  <th style="background-color:#FFFFFF;"></th>
-		  <th style="background-color:#FFFFFF;"></th>
+	  <table >
+		<tr>
+		  <td>宿舍类型:</th>
+		  <td><select id="susheleixing" name="keywords" size="1" onchange="select_changed(this)"></select></th>
 		</tr>
+		<tr>
+		  <td>宿舍楼:</td>
+		  <td><select id="sushelou" name="keywords" size="1" onchange="select_changed(this)"></select></td>
+		</tr>
+		<tr>
+		  <td>入住人数:</td>
+		  <td><select id="ruzhurenshu" name="keywords" size="1" onchange="select_changed(this)"></select></td>
+		</tr>
+	  </table>	   
+
+      <table id="customers">
+		
 		<tr>
 		  <th>ID</th>
 		  <th>宿舍号</th>

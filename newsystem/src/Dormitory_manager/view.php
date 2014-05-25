@@ -75,6 +75,49 @@ function watch_set(f){ // ±£´æ
 	}
 	confirm(set);
 }
+
+function stateChanged() {
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+		alert(xmlHttp.responseText)
+		//document.getElementById("txtHint").innerHTML=xmlHttp.responseText 
+	}
+}
+
+function GetXmlHttpObject() {
+	var xmlHttp=null;
+	try	{
+		// Firefox, Opera 8.0+, Safari
+		xmlHttp=new XMLHttpRequest();
+	} catch (e) {
+		// Internet Explorer
+		try	{
+			xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e) {
+			xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+	return xmlHttp;
+}
+
+function select_changed() {
+	var susheleixing = document.getElementById("susheleixing").options[document.getElementById("susheleixing").options.selectedIndex].text;
+	var sushelou = document.getElementById("sushelou").options[document.getElementById("sushelou").options.selectedIndex].text;
+	var ruzhurenshu = document.getElementById("ruzhurenshu").options[document.getElementById("ruzhurenshu").options.selectedIndex].text;
+
+	xmlHttp=GetXmlHttpObject();
+	if (xmlHttp==null) {
+		alert ("Browser does not support HTTP Request")
+		return
+	}
+	var url="./ajax.php"
+	url = url + "?susheleixing=" + susheleixing
+	url = url + "&sushelou=" + sushelou
+	url = url + "&ruzhurenshu=" + ruzhurenshu
+
+	xmlHttp.onreadystatechange=stateChanged
+	xmlHttp.open("GET",url,true)
+	xmlHttp.send(null)
+}
 function onload()
 {
 	//alert("onload");
@@ -92,9 +135,9 @@ function onload()
 		<tr style="border-style: solid; border-width: 0px 0px 5px 0px;">
 		  <th style="background-color:#FFFFFF;"></th>
 		  <th style="background-color:#FFFFFF;"></th>
-		  <th style="background-color:#FFFFFF;"><select id="susheleixing" name="keywords" size="1" onchange="watch_sel(this.form)"></select></th>
-		  <th style="background-color:#FFFFFF;"><select id="sushelou" name="keywords" size="1" onchange="watch_sel(this.form)"></select></th>
-		  <th style="background-color:#FFFFFF;"><select id="ruzhurenshu" name="keywords" size="1" onchange="watch_sel(this.form)"></select></th>
+		  <th style="background-color:#FFFFFF;"><select id="susheleixing" name="keywords" size="1" onchange="select_changed(this)"></select></th>
+		  <th style="background-color:#FFFFFF;"><select id="sushelou" name="keywords" size="1" onchange="select_changed(this)"></select></th>
+		  <th style="background-color:#FFFFFF;"><select id="ruzhurenshu" name="keywords" size="1" onchange="select_changed(this)"></select></th>
 		  <th style="background-color:#FFFFFF;"></th>
 		  <th style="background-color:#FFFFFF;"></th>
 		  <th style="background-color:#FFFFFF;"></th>

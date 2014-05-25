@@ -3,7 +3,7 @@ include_once("../common/db_conn.php");
 
 header("Content-Type:text/html;charset=gb2312");
 
-function Dorms_view() {
+function Dorms_view($filter) {
 	echo <<<EOT
 <table id="customers">
        <tr>
@@ -21,7 +21,24 @@ EOT;
 	$result = mysql_query("SELECT * FROM dorms");
 	
     $index = 0;
-    while($row = mysql_fetch_array($result)) {
+	while($row = mysql_fetch_array($result)) {
+		$flag = 1;
+		if ($filter["susheleixing"] != null 
+			&& $filter["susheleixing"] != $row['宿舍类型']) {
+			$flag = 0;
+		}
+		if ($filter["sushelou"] != null 
+			&& $filter["sushelou"] != $row['宿舍楼']) {
+			$flag = 0;
+		}
+		if ($filter["ruzhurenshu"] != null 
+			&& $filter["ruzhurenshu"] != $row['入住人数']) {
+			$flag = 0;
+		}
+		
+		if ($flag == 0) {
+			continue;
+		}
         if ($index == 0) {
             echo "<tr>"; 
             $index = 1;
@@ -49,6 +66,8 @@ EOF;
 $susheleixing = $_GET["susheleixing"];
 $sushelou = $_GET["sushelou"];
 $ruzhurenshu = $_GET["ruzhurenshu"];
-Dorms_view();
+Dorms_view(array("susheleixing"=>$susheleixing,
+				 "sushelou"=>$sushelou,
+			   "ruzhurenshu"=>$ruzhurenshu));
 
 ?>

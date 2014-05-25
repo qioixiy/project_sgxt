@@ -100,10 +100,13 @@ function GetXmlHttpObject() {
 }
 
 function select_changed() {
-	var susheleixing = document.getElementById("susheleixing").options[document.getElementById("susheleixing").options.selectedIndex].text;
-	var sushelou = document.getElementById("sushelou").options[document.getElementById("sushelou").options.selectedIndex].text;
-	var ruzhurenshu = document.getElementById("ruzhurenshu").options[document.getElementById("ruzhurenshu").options.selectedIndex].text;
-
+	var susheleixing = document.getElementById("susheleixing").options[document.getElementById("susheleixing").options.selectedIndex].text
+	var sushelou = document.getElementById("sushelou").options[document.getElementById("sushelou").options.selectedIndex].text
+	var ruzhurenshu = document.getElementById("ruzhurenshu").options[document.getElementById("ruzhurenshu").options.selectedIndex].text
+	if (susheleixing == "«Î—°‘Ò") susheleixing=""
+	if (sushelou == "«Î—°‘Ò") sushelou=""
+	if (ruzhurenshu == "«Î—°‘Ò") ruzhurenshu=""
+	
 	xmlHttp=GetXmlHttpObject();
 	if (xmlHttp==null) {
 		alert ("Browser does not support HTTP Request")

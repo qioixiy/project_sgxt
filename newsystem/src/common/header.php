@@ -21,12 +21,11 @@
      if (isset($_COOKIE["user"]))
          echo "<p align=\"right\" style=\"color: red;\"> Welcome " . $_COOKIE["user"] . "</p>";
      else
-         echo "<p align=\"right\" style=\"color: red;\"> Welcome guest!</br>";
+         echo "<p align=\"right\" style=\"color: red;\"> Welcome guest!</p>";
 ?>
-      </br>
       <div id="navi">
 	<ul>
-	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="/sgxt/newsystem/">&nbsp;登录首页&nbsp;</a></li>
+	  <li style="border-style: solid; border-width: 0px 0px 1px 0px;" onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="/sgxt/newsystem/">&nbsp;登录&nbsp;</a></li>
 	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="/sgxt/newsystem/src/Dormitory_manager/">&nbsp;宿舍管理&nbsp;</a></li>
 	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="">&nbsp;班级管理&nbsp;</a></li>
 	  <li onmouseout="this.style.backgroundColor=''" onmouseover="this.style.backgroundColor='#778899'"><a href="">&nbsp;后勤管理&nbsp;</a></li>

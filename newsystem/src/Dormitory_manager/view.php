@@ -90,9 +90,6 @@ function select_changed() {
 function onload()
 {
 	//alert("onload");
-	watch_init("susheleixing", "8", "6", "4");
-	watch_init("sushelou", "银杏楼", "厚德楼", "达理楼");
-	watch_init("ruzhurenshu", "0", "1", "2", "3", "4", "5", "6", "7", "8");
 }
 //-->
 	</script>
@@ -130,6 +127,9 @@ function onload()
 		</tr>
 <?php
 	$result = mysql_query("SELECT * FROM dorms");
+    $susheleixing = array();
+    $sushelou = array();
+    $ruzhurenshu = array();
 
     $index = 0;
     while($row = mysql_fetch_array($result)) {
@@ -149,7 +149,27 @@ function onload()
 			. "<td>" . $row['最后更新时间'] . "</td>"
 			. "<td>" . $row['备注'] . "</td>";
         echo "</tr>";
+		$susheleixing[$row['宿舍类型']] = $row['宿舍类型'];
+		$sushelou[$row['宿舍楼']] = $row['宿舍楼'];
+		$ruzhurenshu[$row['入住人数']] = $row['入住人数'];
     }
+function print_init_list($dst, $src) {
+	echo "watch_init(\"$dst\"";
+	foreach ($src as $value) {
+		echo ",\"" . $value . "\"";
+	}
+	echo ");";
+}
+echo '<script type="text/javascript">';
+print_init_list("susheleixing", $susheleixing);
+print_init_list("sushelou", $sushelou);
+print_init_list("ruzhurenshu", $ruzhurenshu);
+echo '
+watch_init("susheleixing", "8", "6", "4");
+watch_init("sushelou", "银杏楼", "厚德楼", "达理楼");
+watch_init("ruzhurenshu", "0", "1", "2", "3", "4", "5", "6", "7", "8");
+';
+echo '</script>'
 ?>      
      
 	  </table>

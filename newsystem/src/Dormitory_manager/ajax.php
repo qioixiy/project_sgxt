@@ -3,12 +3,8 @@ include_once("../common/db_conn.php");
 
 header("Content-Type:text/html;charset=gb2312");
 
-//get parameters from URL
-$susheleixing = $_GET["susheleixing"];
-$sushelou = $_GET["sushelou"];
-$ruzhurenshu = $_GET["ruzhurenshu"];
-
-echo <<<EOT
+function Dorms_view() {
+	echo <<<EOT
 <table id="customers">
        <tr>
 		  <th>ID</th>
@@ -23,7 +19,7 @@ echo <<<EOT
 EOT;
 
 	$result = mysql_query("SELECT * FROM dorms");
-
+	
     $index = 0;
     while($row = mysql_fetch_array($result)) {
         if ($index == 0) {
@@ -43,9 +39,16 @@ EOT;
 			. "<td>" . $row['±¸×¢'] . "</td>";
         echo "</tr>";
     }
-     
-echo <<<EOF
+	
+	echo <<<EOF
 	  </table>
-
 EOF;
+}
+
+//get parameters from URL
+$susheleixing = $_GET["susheleixing"];
+$sushelou = $_GET["sushelou"];
+$ruzhurenshu = $_GET["ruzhurenshu"];
+Dorms_view();
+
 ?>

@@ -40,7 +40,7 @@ function make_and_request(param) {
 	var url="./ajax.php"
 	url = url + "?op=" + "deletefilter" +"&"
 	url = url + "param=" + param
-	alert(url)
+	//alert(url)
 
 	xmlHttp.onreadystatechange=stateChanged
 	xmlHttp.open("GET",url,true)

@@ -1,6 +1,6 @@
 <?php
 include_once("../common/db_conn.php");
-
+date_default_timezone_set("Asia/Shanghai");
 header("Content-Type:text/html;charset=gb2312");
 
 function Dorms_view($filter) {
@@ -62,7 +62,15 @@ EOT;
 EOF;
 }
 function Dorms_delete($param) {
-	echo $param;
+	//echo $param;
+	$arr = explode(";", $param);
+	//print_r($arr);
+	foreach ($arr as $v) {
+		$temp = explode(",", $v);
+		$sql = "DELETE FROM dorms WHERE '$temp[0]' AND '$temp[1]';";
+		echo $sql . "</br>";
+		//mysql_query($sql);
+	}
 	
 	echo <<<EOT
 <table id="customers">

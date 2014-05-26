@@ -7,6 +7,46 @@ include_once("../common/db_conn.php");
   <head>
     <link href="/sgxt/assert/css/table_customers.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript">
+
+function stateChanged() {
+	if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+		//alert(xmlHttp.responseText)
+		document.getElementById("customers").innerHTML=xmlHttp.responseText 
+	}
+}
+
+function GetXmlHttpObject() {
+	var xmlHttp=null;
+	try	{
+		// Firefox, Opera 8.0+, Safari
+		xmlHttp=new XMLHttpRequest();
+	} catch (e) {
+		// Internet Explorer
+		try	{
+			xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+		} catch (e) {
+			xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	}
+	return xmlHttp;
+}
+
+function make_and_request(param) {
+	xmlHttp=GetXmlHttpObject();
+	if (xmlHttp==null) {
+		alert ("Browser does not support HTTP Request")
+		return
+	}
+	var url="./ajax.php"
+	url = url + "?op=" + "deletefilter" +"&"
+	url = url + "param=" + param
+	alert(url)
+
+	xmlHttp.onreadystatechange=stateChanged
+	xmlHttp.open("GET",url,true)
+	xmlHttp.send(null)
+}
+
 function reset_select() {
 	var arr = document.getElementsByName('delete_checkbox');   
 
@@ -28,26 +68,42 @@ function delete_select() {
 		}
 	}
 //*/
+	var arr_checked = new Array();
+	
 	var arr = document.getElementsByName('delete_checkbox');   
 	var checked = false;   
 	for(var i = 0; i < arr.length; i++){   
 		if(arr[i].checked){   
 			var v = arr[i].value;   
+			arr_checked.push(v);
 			checked = true;
-			alert(v);
 		}   
 	}   
 	if(checked == false){   
 		alert('请选择想删除的项');   
 		return false; 
 	}
+	
+	var str
+	for (var i = 0; i < arr_checked.length; i++) {
+		
+		if (str) {
+			str += arr_checked[i];
+			str += ";";
+		} else {
+			str = arr_checked[i] + ";";
+		}
+	}
+	//alert(str);
+
+	make_and_request(str)
 }
 	</script>
   </head>
   
   <body>
 	<div>
-	</br>
+	<p id="statusbar">选择要删除的项,支持多选</p>
 	</div>
 	<div>
 	  <div style='position:absolute;top:15px;right:30px;width:100px;height:80px;border:1px' id='float-div'>
@@ -89,7 +145,7 @@ function delete_select() {
 			. "<td>" . $row['最后更新时间'] . "</td>"
 			. "<td>" . $row['备注'] . "</td>";
 		echo "<td>" . '<input type="checkbox" id="checkbox" name="delete_checkbox" value ="' 
-			. '宿舍号' . '='. $row['宿舍号'] .'&'
+			. '宿舍号' . '='. $row['宿舍号'] .','
 			. '宿舍楼' . '='. $row['宿舍楼'] 
 			. '"\>' . "</td>";
         echo "</tr>";

@@ -61,6 +61,60 @@ EOT;
 	  </table>
 EOF;
 }
+function Dorms_delete($param) {
+	echo $param;
+	
+	echo <<<EOT
+<table id="customers">
+       <tr>
+		  <th>ID</th>
+		  <th>宿舍号</th>
+		  <th>宿舍类型</th>
+		  <th>宿舍楼</th>
+		  <th>入住人数</th>
+		  <th>登记时间</th>
+		  <th>最后更新时间</th>
+		  <th>备注</th>	
+		  <th>删除?</th>
+		</tr>
+EOT;
+
+	$result = mysql_query("SELECT * FROM dorms");
+	
+    $index = 0;
+	while($row = mysql_fetch_array($result)) {
+		$flag = 1;
+
+		
+		if ($flag == 0) {
+			continue;
+		}
+        if ($index == 0) {
+            echo "<tr>"; 
+            $index = 1;
+        } else {
+            echo "<tr class='alt'>"; 
+            $index = 0;
+        }
+        echo "<td>" . $row['id'] . "</td>" 
+			. "<td>" . $row['宿舍号'] . "</td>" 
+			. "<td>" . $row['宿舍类型'] . "</td>" 
+			. "<td>" . $row['宿舍楼'] . "</td>"
+			. "<td>" . $row['入住人数'] . "</td>"
+			. "<td>" . $row['登记时间'] . "</td>"
+			. "<td>" . $row['最后更新时间'] . "</td>"
+			. "<td>" . $row['备注'] . "</td>";
+		echo "<td>" . '<input type="checkbox" id="checkbox" name="delete_checkbox" value ="' 
+			. '宿舍号' . '='. $row['宿舍号'] .','
+			. '宿舍楼' . '='. $row['宿舍楼'] 
+			. '"\>' . "</td>";
+        echo "</tr>";
+    }
+	
+	echo <<<EOF
+	  </table>
+EOF;
+}
 
 //viewfilter use for view function.
 if ($_GET["op"] == "viewfilter") {
@@ -71,6 +125,11 @@ if ($_GET["op"] == "viewfilter") {
 	Dorms_view(array("susheleixing"=>$susheleixing,
 					 "sushelou"=>$sushelou,
 					 "ruzhurenshu"=>$ruzhurenshu));
+} else if ($_GET["op"] == "deletefilter") {//viewfilter use for delete function.
+//get parameters from URL
+	$param = $_GET["param"];
+
+	Dorms_delete($param);
 }
 
 ?>

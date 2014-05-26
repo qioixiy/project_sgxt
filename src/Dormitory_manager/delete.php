@@ -11,14 +11,40 @@ function delete_select() {
 	
 }
 function reset_select() {
+/*
+	var table = document.getElementById("customers");
+	var rows = table.getElementsByTagName("tr");
 	
+	for(i = 0; i < rows.length; i++) {
+		var cells = rows[i].cells
+		for (j = 0; j< cells.length; j++) {
+			//alert(cells[j].innerHTML);
+		}
+	}
+//*/
+	var arr = document.getElementsByName('delete_checkbox');   
+	var checked = false;   
+	for(var i = 0; i < arr.length; i++){   
+		if(arr[i].checked){   
+			var v = arr[i].value;   
+			checked = true;
+			alert(v);
+		}   
+	}   
+	if(checked == false){   
+		alert('请选择想删除的项');   
+		return false; 
+	}
 }
 	</script>
   </head>
   
   <body>
 	<div>
-	  <div style='position:absolute;top:10px;right:30px;width:100px;height:80px;border:1px' id='float-div'>
+	</br>
+	</div>
+	<div>
+	  <div style='position:absolute;top:15px;right:30px;width:100px;height:80px;border:1px' id='float-div'>
 		<button type="button" onclick=reset_select()>复位选择项</button>
 		<button type="button" onclick=delete_select()>删除选择项</button>
 	  </div>
@@ -56,7 +82,10 @@ function reset_select() {
 			. "<td>" . $row['登记时间'] . "</td>"
 			. "<td>" . $row['最后更新时间'] . "</td>"
 			. "<td>" . $row['备注'] . "</td>";
-		echo "<td>" . '<input type="checkbox" name="fruit" value ="mango">' . "</td>";
+		echo "<td>" . '<input type="checkbox" id="checkbox" name="delete_checkbox" value ="' 
+			. '宿舍号' . '='. $row['宿舍号'] .'&'
+			. '宿舍楼' . '='. $row['宿舍楼'] 
+			. '"\>' . "</td>";
         echo "</tr>";
     }
 ?>      

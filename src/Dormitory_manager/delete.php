@@ -145,8 +145,8 @@ function delete_select() {
 			. "<td>" . $row['×îºó¸üÐÂÊ±¼ä'] . "</td>"
 			. "<td>" . $row['±¸×¢'] . "</td>";
 		echo "<td>" . '<input type="checkbox" id="checkbox" name="delete_checkbox" value ="' 
-			. 'ËÞÉáºÅ' . '='. $row['ËÞÉáºÅ'] .','
-			. 'ËÞÉáÂ¥' . '='. $row['ËÞÉáÂ¥'] 
+			. 'ËÞÉáºÅ' . '='. '\'' . $row['ËÞÉáºÅ'] . '\'' . ','
+			. 'ËÞÉáÂ¥' . '='. '\'' . $row['ËÞÉáÂ¥'] . '\''
 			. '"\>' . "</td>";
         echo "</tr>";
     }

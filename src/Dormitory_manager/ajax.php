@@ -66,10 +66,15 @@ function Dorms_delete($param) {
 	$arr = explode(";", $param);
 	//print_r($arr);
 	foreach ($arr as $v) {
-		$temp = explode(",", $v);
-		$sql = "DELETE FROM dorms WHERE '$temp[0]' AND '$temp[1]';";
-		echo $sql . "</br>";
-		//mysql_query($sql);
+		if ($v) {
+			//echo $v . "</br>";
+			$temp = explode(",", $v);
+			//$sql = "DELETE FROM dorms WHERE ËÞÉáÂ¥=\'ÊéÏãÃÅµÚ\';";
+			$sql = "DELETE FROM dorms WHERE $temp[0] AND $temp[1];";
+			$sql = str_replace("\\","", $sql);
+			//echo $sql . "</br>";
+			mysql_query($sql);
+		}
 	}
 	
 	echo <<<EOT
@@ -113,8 +118,8 @@ EOT;
 			. "<td>" . $row['×îºó¸üÐÂÊ±¼ä'] . "</td>"
 			. "<td>" . $row['±¸×¢'] . "</td>";
 		echo "<td>" . '<input type="checkbox" id="checkbox" name="delete_checkbox" value ="' 
-			. 'ËÞÉáºÅ' . '='. $row['ËÞÉáºÅ'] .','
-			. 'ËÞÉáÂ¥' . '='. $row['ËÞÉáÂ¥'] 
+			. 'ËÞÉáºÅ' . '='. '\'' . $row['ËÞÉáºÅ'] . '\'' . ','
+			. 'ËÞÉáÂ¥' . '='. '\'' . $row['ËÞÉáÂ¥'] . '\''
 			. '"\>' . "</td>";
         echo "</tr>";
     }

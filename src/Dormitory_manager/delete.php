@@ -7,10 +7,16 @@ include_once("../common/db_conn.php");
   <head>
     <link href="/sgxt/assert/css/table_customers.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript">
-function delete_select() {
-	
-}
 function reset_select() {
+	var arr = document.getElementsByName('delete_checkbox');   
+
+	for(var i = 0; i < arr.length; i++){   
+		if(arr[i].checked){   
+			arr[i].checked = false;
+		}   
+	}
+}
+function delete_select() {
 /*
 	var table = document.getElementById("customers");
 	var rows = table.getElementsByTagName("tr");

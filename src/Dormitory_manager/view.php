@@ -79,7 +79,8 @@ function select_changed() {
 		return
 	}
 	var url="./ajax.php"
-	url = url + "?susheleixing=" + susheleixing
+	url = url + "?op=" + "viewfilter"
+	url = url + "&susheleixing=" + susheleixing
 	url = url + "&sushelou=" + sushelou
 	url = url + "&ruzhurenshu=" + ruzhurenshu
 
@@ -164,11 +165,11 @@ echo '<script type="text/javascript">';
 print_init_list("susheleixing", $susheleixing);
 print_init_list("sushelou", $sushelou);
 print_init_list("ruzhurenshu", $ruzhurenshu);
-echo '
+/*echo '
 watch_init("susheleixing", "8", "6", "4");
 watch_init("sushelou", "银杏楼", "厚德楼", "达理楼");
 watch_init("ruzhurenshu", "0", "1", "2", "3", "4", "5", "6", "7", "8");
-';
+';//*/
 echo '</script>'
 ?>      
      

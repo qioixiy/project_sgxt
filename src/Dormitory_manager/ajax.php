@@ -62,12 +62,15 @@ EOT;
 EOF;
 }
 
+//viewfilter use for view function.
+if ($_GET["op"] == "viewfilter") {
 //get parameters from URL
-$susheleixing = $_GET["susheleixing"];
-$sushelou = $_GET["sushelou"];
-$ruzhurenshu = $_GET["ruzhurenshu"];
-Dorms_view(array("susheleixing"=>$susheleixing,
-				 "sushelou"=>$sushelou,
-			   "ruzhurenshu"=>$ruzhurenshu));
+	$susheleixing = $_GET["susheleixing"];
+	$sushelou = $_GET["sushelou"];
+	$ruzhurenshu = $_GET["ruzhurenshu"];
+	Dorms_view(array("susheleixing"=>$susheleixing,
+					 "sushelou"=>$sushelou,
+					 "ruzhurenshu"=>$ruzhurenshu));
+}
 
 ?>
